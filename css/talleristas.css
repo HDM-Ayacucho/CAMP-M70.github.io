@@ -1,0 +1,179 @@
+.titulo-talleristas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo-talleristas img {
+    max-width: 100%;
+    height: auto;
+}
+
+.talleristas-section {
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 150%;
+    margin: 25px auto;
+    padding: 30px;
+    
+}
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 35px;
+    transition: transform 0.3s ease;
+    padding-inline-start: 8%;
+}
+
+.banner:hover {
+    transform: scale(1.02);
+}
+
+.profile-image {
+    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.5));
+    height: auto;
+    margin-bottom: 15px;
+    order: 5;
+    width: 60%;
+    max-width: 400px;
+    transition: all 0.5s ease;
+    
+}
+
+.profile-info {
+    position:flex;
+    opacity: 1;
+    transition: all 0.5s ease;
+    background-color: rgba(10, 29, 9, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    max-width: 100%;
+
+}
+
+.social-links {
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.social-icon {
+    margin: 0 19px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-size: 28px;
+}
+
+.social-icon:hover {
+    color: #91ff00;
+    transform: scale(1.6);
+}
+
+.background-container {
+    display: none;
+}
+
+@media (min-width: 769px) {
+    .banner {
+        flex-direction: row;
+        height: 80vh;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .profile-image {
+        width: 45%;
+        max-width: 600px;
+        margin-bottom: 0;
+        order: 0;
+        margin-left: 10%;
+        z-index: 10;
+        transition: transform 0.5s ease, filter 0.1s ease;
+    }
+
+    .banner:hover .profile-image {
+        transform: translateX(10%);
+        filter: brightness(1.1);
+    }
+
+    .profile-info {
+        position: absolute;
+        left: -100px;
+        margin-left: 2%;
+        opacity: 0;
+        max-width: 330px;
+        z-index: 7;
+        transition: left 0.5s ease, opacity 0.5s ease;
+    }
+
+    .banner:hover .profile-info {
+        left: 20px;
+        opacity: 1;
+    }
+
+    .social-links {
+        display: none;
+        transition: opacity 0.5s ease;
+    }
+
+    .banner:hover .social-links {
+        display: flex;
+        animation: fadeIn 0.5s ease;
+    }
+
+    .background-container {
+        display: block;
+        position: absolute;
+        width: 90%;
+        height: 90%;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .background-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: auto;
+        right: -3%;
+        bottom: 0;
+        width: 40%;
+        background-size: cover;
+        background-position: center right;
+        filter: blur(3px);
+        opacity: 0.3;
+        transition: all 0.5s ease;
+    }
+
+    .banner:hover .background-container::before {
+        filter: blur(1px);
+        opacity: 0.5;
+        transform: scale(1.05);
+    }
+
+    .tallerista-1 .background-container::before {
+        background-image: url('/pricipal/escuadrones/agila.svg');
+    }
+
+    .tallerista-2 .background-container::before {
+        background-image: url('/pricipal/escuadrones/leon.svg');
+    }
+    .tallerista-3 .background-container::before {
+        background-image: url('/pricipal/escuadrones/hombre.svg');
+    }
+    
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+}
