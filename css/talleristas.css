@@ -161,14 +161,20 @@
     }
 
     .tallerista-1 .background-container::before {
-        background-image: url('/pricipal/escuadrones/agila.svg');
+        background-image: url('/pricipal/escuadrones/leon.svg');
     }
 
     .tallerista-2 .background-container::before {
-        background-image: url('/pricipal/escuadrones/leon.svg');
+        background-image: url('/pricipal/escuadrones/hombre.svg');
     }
     .tallerista-3 .background-container::before {
-        background-image: url('/pricipal/escuadrones/hombre.svg');
+        background-image: url('/pricipal/escuadrones/buey.svg');
+    }
+    .tallerista-4 .background-container::before {
+        background-image: url('/pricipal/escuadrones/leon.svg');
+    }
+    .tallerista-5 .background-container::before {
+        background-image: url('/pricipal/escuadrones/agila.svg');
     }
     
 
