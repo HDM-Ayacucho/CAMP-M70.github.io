@@ -936,6 +936,76 @@ body {
   }
 }
  
+.campamentollevar {
+  padding: 4rem 2rem;
+
+}
+
+.container-llevar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.text-contento {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.image-contento {
+  flex: 1;
+}
+
+.image-frames img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  
+}
+
+
+
+.download-btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: #359100;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #24b300;
+}
+
+@media (max-width: 768px) {
+  .container-llevar {
+    flex-direction: column;
+  }
+
+  .text-contento, .image-contento {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .text-contento {
+    order: 2;
+    margin-top: 4rem;
+  }
+
+  .image-contento {
+    order: 1;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+}
 /* seccion patrocinadores */
 .patrocinadores {
   padding: 50px 20px;
@@ -948,6 +1018,32 @@ body {
   color: #9dff00;
   margin-bottom: 30px;
 }
+
+
+.logoasambleas {
+  width: 350px; 
+  margin: 20px auto; 
+  display: block; 
+}
+
+.logoasambleas img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+  display: block; 
+}
+
+.logoasambleas img:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 868px) {
+  .logoasambleas {
+    width: 120px; 
+  }
+}
+
 
 .contenedor-logos {
   display: flex;
