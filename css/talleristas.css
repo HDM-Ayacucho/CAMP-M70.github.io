@@ -1,185 +1,160 @@
-.titulo-talleristas {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.titulo-talleristas img {
-    max-width: 100%;
-    height: auto;
+body {
+    
+    background-color: #f8f3e9;
+    color: #3b9407;
 }
 
-.talleristas-section {
-    padding: 20px 0;
-}
-
-.container {
-    max-width: 150%;
-    margin: 25px auto;
+.talleristas {
+    max-width: 1500px;
+    margin: 0 auto;
     padding: 30px;
-    
 }
 
-.banner {
+.tallerista {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    height: auto;
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 35px;
-    transition: transform 0.3s ease;
-    padding-inline-start: 8%;
-}
-
-.banner:hover {
-    transform: scale(1.02);
-}
-
-.profile-image {
-    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.5));
-    height: auto;
-    margin-bottom: 15px;
-    order: 5;
-    width: 60%;
-    max-width: 400px;
-    transition: all 0.5s ease;
-    
-}
-
-.profile-info {
-    position:flex;
-    opacity: 1;
-    transition: all 0.5s ease;
-    background-color: rgba(10, 29, 9, 0.8);
-    padding: 15px;
-    border-radius: 10px;
-    max-width: 100%;
-
-}
-
-.social-links {
-    display: flex;
-    margin-top: 10px;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    margin-bottom: 90px;
+    position: relative;
 }
 
-.social-icon {
-    margin: 0 19px;
-    color: #333;
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
-    font-size: 28px;
+.tallerista > div {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+    font-family: 'Playfair Display', serif;
 }
 
-.social-icon:hover {
-    color: #91ff00;
-    transform: scale(1.6);
+.tallerista-principal {
+    flex: 1 1 100%;
+    text-align: center;
+    margin-bottom: 30px;
+    animation-delay: 0.3s;
+    position: relative;
+    z-index: 1;
 }
 
-.background-container {
-    display: none;
+.tallerista-principal img {
+    max-width: 250px;
+    border-radius: 50%;
+    background-image: linear-gradient(to top, rgb(58, 71, 3), rgba(0, 0, 0, 0));
+    transition: transform 0.3s ease;
+    ;
 }
 
-@media (min-width: 769px) {
-    .banner {
-        flex-direction: row;
-        height: 80vh;
-        justify-content: flex-start;
-        align-items: center;
-    }
+.tallerista-principal img:hover {
+    transform: scale(1.1);
+}
 
-    .profile-image {
-        width: 45%;
-        max-width: 600px;
-        margin-bottom: 0;
-        order: 0;
-        margin-left: 10%;
-        z-index: 10;
-        transition: transform 0.5s ease, filter 0.1s ease;
-    }
+.tallerista-principal h2 {
+    font-size: 32px;
+    margin-top: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
 
-    .banner:hover .profile-image {
-        transform: translateX(10%);
-        filter: brightness(1.1);
-    }
+.tallerista-secundario {
+    flex: 1 1 100%;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
 
-    .profile-info {
-        position: absolute;
-        left: -100px;
-        margin-left: 2%;
-        opacity: 0;
-        max-width: 330px;
-        z-index: 7;
-        transition: left 0.5s ease, opacity 0.5s ease;
-    }
-
-    .banner:hover .profile-info {
-        left: 20px;
-        opacity: 1;
-    }
-
-    .social-links {
-        display: none;
-        transition: opacity 0.5s ease;
-    }
-
-    .banner:hover .social-links {
-        display: flex;
-        animation: fadeIn 0.5s ease;
-    }
-
-    .background-container {
-        display: block;
-        position: absolute;
-        width: 90%;
-        height: 90%;
-        overflow: hidden;
-        z-index: 1;
-    }
-
-    .background-container::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: auto;
-        right: -3%;
-        bottom: 0;
-        width: 40%;
-        background-size: cover;
-        background-position: center right;
-        filter: blur(3px);
-        opacity: 0.3;
-        transition: all 0.5s ease;
-    }
-
-    .banner:hover .background-container::before {
-        filter: blur(1px);
-        opacity: 0.5;
-        transform: scale(1.05);
-    }
-
-    .tallerista-1 .background-container::before {
-        background-image: url('/pricipal/escuadrones/leon.svg');
-    }
-
-    .tallerista-2 .background-container::before {
-        background-image: url('/pricipal/escuadrones/hombre.svg');
-    }
-    .tallerista-3 .background-container::before {
-        background-image: url('/pricipal/escuadrones/buey.svg');
-    }
-    .tallerista-4 .background-container::before {
-        background-image: url('/pricipal/escuadrones/leon.svg');
-    }
-    .tallerista-5 .background-container::before {
-        background-image: url('/pricipal/escuadrones/agila.svg');
-    }
+.tallerista-secundario img {
+    max-width: 200px;
     
 
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+    opacity: 70%; /* Opacidad reducida para hacerla más oscura */
+
+    animation: bounceUpDown 2s ease-in-out infinite;
+    position: relative; /* Para poder ajustar la posición */
+    top: -40px; /* Ajusta esta cantidad según sea necesario */
+}
+
+@keyframes bounceUpDown {
+    0%, 100% {
+        transform: translateY(0); /* Empieza y termina en la posición original */
+    }
+    50% {
+        transform: translateY(-10px); /* Al 50% de la animación, rebota hacia arriba */
+    }
+}
+
+
+
+.tallerista-info {
+    flex: 1 1 100%;
+    text-align: center;
+    padding: 20px;
+    margin-top: 3px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    margin-top: -60px; /* Ajusta esta cantidad según sea necesario para acercar el lema */
+}
+
+.tallerista-info p {
+    margin: 15px 0;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.tallerista-info .info-label {
+    font-weight: 700;
+    color: #4c580b;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.tallerista-info .info-content {
+    display: block;
+}
+
+.tallerista-info .lema {
+    font-style: italic;
+    color: #8ab80c;
+    margin-top: 50px;
+}
+
+@media (min-width: 768px) {
+    .tallerista {
+        flex-wrap: nowrap;
+    }
+    .tallerista-principal {
+        flex: 0 0 50%;
+        order: 2;
+    }
+    
+    .tallerista-principal img {
+        max-width: 350px;
+    }
+    .tallerista-secundario {
+        flex: 0 0 25%;
+        order: 1;
+        position: static;
+    }
+    .tallerista-secundario img {
+        max-width: 350px;
+
+        position: relative; /* Para poder ajustar la posición */
+        top: -80px; /* Ajusta esta cantidad según sea necesario */
+    }
+    .tallerista-info {
+        flex: 0 0 25%;
+        order: 3;
+        text-align: left;
+        margin-top: 0;
+        position: relative; /* Para poder ajustar la posición */
+        top: -80px; /* Ajusta esta cantidad según sea necesario */
     }
 }
